@@ -37,7 +37,7 @@ const patchUser = (req, res) => {
   const id = req.params.id;
   const { name, lastName, email, birthday } = req.body;
   userControllers
-    .createUser(id, { name, lastName, email, birthday })
+    .updateUser(id, { name, lastName, email, birthday })
     .then((data) => {
       if (data) {
         res.status(200).json({ message: "Updated user", data });

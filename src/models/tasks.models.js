@@ -17,7 +17,7 @@ const Tasks = database.define("tasks", {
     allowNull: false,
   },
   date: {
-    type: DataTypes.DATEONLY
+    type: DataTypes.DATEONLY,
   },
   duration: {
     type: DataTypes.ARRAY(DataTypes.TIME),
@@ -30,7 +30,7 @@ const Tasks = database.define("tasks", {
     type: DataTypes.STRING,
     defaultValue: "Pendiente",
   },
-  user_id: {
+  userId: {
     type: DataTypes.UUID,
     allowNull: false,
     references: {
@@ -38,7 +38,7 @@ const Tasks = database.define("tasks", {
       key: "id",
     },
   },
-  project_id: {
+  projectId: {
     type: DataTypes.UUID,
     references: {
       model: Projects,

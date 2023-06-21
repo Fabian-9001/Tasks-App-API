@@ -8,19 +8,19 @@ const ProjectMembers = database.define("project_members", {
     type: DataTypes.UUID,
     primaryKey: true,
   },
-  project_id: {
-    type: DataTypes.UUID,
-    allowNull: false,
-    references: {
-      model: Projects,
-      key: "id",
-    },
-  },
-  user_id: {
+  userId: {
     type: DataTypes.UUID,
     allowNull: false,
     references: {
       model: Users,
+      key: "id",
+    },
+  },
+  projectId: {
+    type: DataTypes.UUID,
+    allowNull: false,
+    references: {
+      model: Projects,
       key: "id",
     },
   },
