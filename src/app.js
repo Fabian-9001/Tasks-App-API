@@ -4,6 +4,9 @@ const cors = require("cors");
 const config = require("../config");
 const database = require("./utils/database");
 const userRoutes = require("./users/users.routes");
+const projectRoutes = require("./projects/projects.routes");
+const taskRoutes = require("./tasks/tasks.routes");
+const projectMemberRoutes = require("./projectMembers/projectMembers.routes");
 const initModels = require("./models/init.models");
 
 //Initial Config
@@ -28,6 +31,9 @@ app.get("/", (req, res) => {
   res.status(200).json("Ok!");
 });
 app.use("/api/v1/users", userRoutes);
+app.use("/api/v1/projects", projectRoutes);
+app.use("/api/v1/tasks", taskRoutes);
+app.use("/api/v1/project-members", projectMemberRoutes);
 
 //Server
 app.listen(config.api.port, () => {
